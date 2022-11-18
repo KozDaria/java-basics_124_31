@@ -1,5 +1,5 @@
 public class Book {
-    String Author;
+    String author;
     String name;
     double price;
     int year;
@@ -8,18 +8,18 @@ public class Book {
     }
 
     public Book(String author, String name, double price, int year) {
-        Author = author;
+        this.author = author;
         this.name = name;
         this.price = price;
         this.year = year;
     }
 
     public String getAuthor() {
-        return Author;
+        return author;
     }
 
     public void setAuthor(String author) {
-        Author = author;
+        author = author;
     }
 
     public String getName() {
@@ -49,7 +49,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "Author='" + Author + '\'' +
+                "Author='" + author + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", year=" + year +

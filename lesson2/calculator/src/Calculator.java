@@ -1,49 +1,64 @@
 public class Calculator {
-    public int Sum(int x, int y){
+    public int sum(int x, int y){
         return x+y;
     }
 
-    public double Sum(double x, double y){
+    public double sum(double x, double y){
         return x+y;
     }
 
-    public long Sum(long x, long y){
+    public long sum(long x, long y){
         return x+y;
     }
 
-    public int Mult(int x, int y){
+    public int mult(int x, int y){
         return x*y;
     }
 
-    public double Mult(double x, double y){
+    public double mult(double x, double y){
         return x*y;
     }
 
-    public long Mult(long x, long y){
+    public long mult(long x, long y){
         return x*y;
     }
 
-    public int Subtr(int x, int y){
+    public int subtr(int x, int y){
         return x-y;
     }
 
-    public double Subtr(double x, double y){
+    public double subtr(double x, double y){
         return x-y;
     }
 
-    public long Subtr(long x, long y){
+    public long subtr(long x, long y){
         return x-y;
     }
 
-    public int Div(int x, int y){
-        return x/y;
+    public int div(int x, int y) {
+        if (y != 0) {
+            return x / y;
+        } else {
+            System.err.println("Недопустимая операция");
+            return 0;
+        }
     }
 
-    public double Div(double x, double y){
-        return x/y;
+    public double div(double x, double y) {
+        if (y != 0) {
+            return x / y;
+        } else {
+            System.err.println("Недопустимая операция");
+            return 0;
+        }
     }
 
-    public long Div(long x, long y){
-        return x/y;
+    public long div(long x, long y) {
+        if (y != 0) {
+            return x / y;
+        } else {
+            System.err.println("Недопустимая операция");
+            return 0;
+        }
     }
 }
