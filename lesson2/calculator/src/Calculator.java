@@ -35,14 +35,14 @@ public class Calculator {
         return x-y;
     }
 
-    public int div(int x, int y) {
+    public double div(int x, int y) {
         if (y != 0) {
-            return x / y;
+            return (double)x / y;
         } else {
-            System.err.println("Недопустимая операция");
-            return 0;
+           System.err.println("Недопустимая операция");
+           return 0;
         }
-    }
+   }
 
     public double div(double x, double y) {
         if (y != 0) {
@@ -53,9 +53,9 @@ public class Calculator {
         }
     }
 
-    public long div(long x, long y) {
+    public double div(long x, long y) {
         if (y != 0) {
-            return x / y;
+            return (double)x / y;
         } else {
             System.err.println("Недопустимая операция");
             return 0;
