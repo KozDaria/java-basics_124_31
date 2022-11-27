@@ -3,6 +3,10 @@ import java.util.Scanner;
 public class task5 {
     public static void main(String[] args) {
         int[] array = getArray();
+        printResult(array);
+    }
+
+    private static void printResult(int[] array) {
         System.out.println(array[0] == 3 || array[array.length - 1] == 3);
     }
 
