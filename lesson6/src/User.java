@@ -11,8 +11,7 @@ public class User extends Person {
     }
 
     @Override
-    public String getName() {
-        System.out.println("Введите имя");
-        return scanner.nextLine();
+    public String getInfo() {
+        return super.getInfo();
     }
 }
