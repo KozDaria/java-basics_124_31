@@ -16,8 +16,7 @@ public class Main {
 
         System.out.println(System.lineSeparator());
         System.out.println("Task 5");
-        User user = new User("Joni");
-        user.getAge();
-        System.out.println(user.getName());
+        User user = new User();
+        System.out.println("User name is " + user.getName());
     }
 }

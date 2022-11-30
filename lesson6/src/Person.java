@@ -3,20 +3,16 @@ import java.util.Scanner;
 public class Person {
     int age = 0;
     String name;
+    Scanner scanner = new Scanner(System.in);
 
-    public int getAge() {
-        setAge();
-        return age;
-    }
-
-    public void setAge() {
-        Scanner scanner = new Scanner(System.in);
-        int inputAge = getInputAge(scanner);
-        while (inputAge < 1 || inputAge > 126) {
-            System.out.println("Вы ввели неправильный возраст");
-            inputAge = getInputAge(scanner);
-        }
-        this.age = inputAge;
+    public int setAge() {
+        System.out.println("Введите возраст");
+        int inputAge = scanner.nextInt();
+       while (inputAge < 1 || inputAge > 126) {
+           System.out.println("Вы ввели неправильный возраст");
+           inputAge = getInputAge(scanner);
+       }
+       return this.age = inputAge;
     }
 
     private static int getInputAge(Scanner scanner) {
