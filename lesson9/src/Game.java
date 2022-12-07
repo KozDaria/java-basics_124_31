@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Game {
-    static Map<User1, Integer> map = new HashMap<>();
+    static Map<UserOfGame, Integer> map = new HashMap<>();
     static int point = 0;
 
 
@@ -12,7 +12,7 @@ public class Game {
     }
 
     private static void printPointByName(String name) {
-        for (Map.Entry<User1, Integer> item : map.entrySet()) {
+        for (Map.Entry<UserOfGame, Integer> item : map.entrySet()) {
             if (Objects.equals(item.getKey().getName(), name)) {
                 point = item.getValue();
             }
@@ -27,11 +27,11 @@ public class Game {
     }
 
     private static void initialize() {
-        User1 user1 = new User1("David");
-        User1 user2 = new User1("Jane");
-        User1 user3 = new User1("Joni");
-        User1 user4 = new User1("Sam");
-        User1 user5 = new User1("Fred");
+        UserOfGame user1 = new UserOfGame("David");
+        UserOfGame user2 = new UserOfGame("Jane");
+        UserOfGame user3 = new UserOfGame("Joni");
+        UserOfGame user4 = new UserOfGame("Sam");
+        UserOfGame user5 = new UserOfGame("Fred");
         map.put(user1, 123);
         map.put(user2, 45);
         map.put(user3, 290);

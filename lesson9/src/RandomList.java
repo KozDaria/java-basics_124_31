@@ -1,7 +1,10 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 
-public class Random {
-    static java.util.Random random = new java.util.Random();
+public class RandomList {
+    static Random random = new Random();
     static ArrayList<Integer> list1 = new ArrayList<>();
     static LinkedList<Integer> list2 = new LinkedList<>();
 

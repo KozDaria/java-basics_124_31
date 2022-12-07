@@ -1,4 +1,4 @@
-public class User1 {
+public class UserOfGame {
     private String name;
 
     public String getName() {
@@ -9,7 +9,7 @@ public class User1 {
         this.name = name;
     }
 
-    public User1(String name) {
+    public UserOfGame(String name) {
         this.name = name;
     }
 }

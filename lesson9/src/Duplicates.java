@@ -13,7 +13,7 @@ public class Duplicates {
         }
     }
 
-    public static HashSet<String> removeDuplicate(List<String> list1) {
+    public static Set<String> removeDuplicate(List<String> list1) {
         return new HashSet<>(list1);
     }
 
