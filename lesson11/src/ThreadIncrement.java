@@ -7,18 +7,22 @@ public class ThreadIncrement implements Runnable {
 
     private static void activateIncThreads() {
         for (int i = 0; i < 100; i++) {
-            Thread thread = new Thread(new ThreadIncrement());
+            Thread thread = new Thread(() -> {
+                for (int j = 0; j < 1000; j++) {
+                    counter.increment();
+                }
+            });
             thread.start();
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
         System.out.println(counter.getCount());
     }
 
     @Override
     public void run() {
-        synchronized (counter) {
-            while (counter.getCount() < 1000) {
-                counter.increment();
-            }
-        }
     }
 }

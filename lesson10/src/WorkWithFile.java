@@ -10,13 +10,10 @@ public class WorkWithFile {
 
     public static List<String> readFileMethod(File file) {
         List<String> list = new ArrayList<>();
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             while (reader.ready()) {
                 list.add(reader.readLine());
             }
-            reader.close();
         } catch (FileNotFoundException e) {
             System.err.println("File not found " + e.getMessage());
         } catch (IOException e) {
@@ -27,13 +24,10 @@ public class WorkWithFile {
     }
 
     public static void writeFileMethod(File file, String addingString) {
-
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.newLine();
             writer.write(addingString);
             writer.flush();
-            writer.close();
         } catch (FileNotFoundException e) {
             System.err.println("File not found " + e.getMessage());
         } catch (IOException e) {
@@ -42,12 +36,10 @@ public class WorkWithFile {
     }
 
     public static void writeFileMethodClean(File file, String addingString) {
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
             writer.newLine();
             writer.write(addingString);
             writer.flush();
-            writer.close();
         } catch (FileNotFoundException e) {
             System.err.println("File not found " + e.getMessage());
         } catch (IOException e) {
