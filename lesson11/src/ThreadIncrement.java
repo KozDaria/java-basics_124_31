@@ -6,20 +6,19 @@ public class ThreadIncrement implements Runnable {
     }
 
     private static void activateIncThreads() {
+        Runnable task = ThreadIncrement::increment;
         for (int i = 0; i < 100; i++) {
-            Thread thread = new Thread(() -> {
-                for (int j = 0; j < 1000; j++) {
-                    counter.increment();
-                }
-            });
-            thread.start();
-            try {
-                thread.join();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            new Thread(task).start();
         }
-        System.out.println(counter.getCount());
+    }
+
+    private static void increment() {
+        synchronized (counter) {
+            for (int j = 0; j < 1000; j++) {
+                counter.increment();
+            }
+            System.out.println(counter.getCount());
+        }
     }
 
     @Override
